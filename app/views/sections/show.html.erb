@@ -1,0 +1,26 @@
+<%
+   @pagetitle = "#{@section.section_name}"
+   @page_class = 'sections show'
+%>
+
+<h1 class='text-center'><%= @section.section_name %></h1>
+
+<%= render partial: 'layouts/messages' %>
+
+<%= link_to 'Edit', edit_section_path(@section), class: 'btn btn-primary' %>
+<%= link_to 'Delete', section_path(@section), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+<%= link_to 'Add New Costume', new_section_costume_path(@section), class: 'btn btn-success' %>
+
+<div class="well well-lg">
+  <%= attachment_image_tag @section, :image, :fit, 400, nil %>
+  <table class="table table-striped">
+    <thead>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <%= render partial: 'sections/costume', collection: @section.costumes %>
+    </tbody>
+  </table>
+</div>

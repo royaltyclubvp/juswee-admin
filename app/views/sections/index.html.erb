@@ -1,0 +1,18 @@
+<%
+   @pagetitle = 'Presentation Sections'
+   @page_class = 'sections index'
+%>
+
+<h1 class='text-center'>Sections</h1>
+
+<%= render partial: 'layouts/messages' %>
+
+<table class='table table-striped'>
+  <thead>
+    <th>Name</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <%= render @sections %>
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<%
+   @pagetitle = 'Welcome to the Jus Wee & Friends Website Administration System'
+   @page_class = 'static-pages home'
+%>
+
+<%= render partial: 'layouts/messages' %>
+
+<div class="jumbotron">
+  <h1>Jus Wee & Friends Website Administration System</h1>
+  <%= link_to 'Sections', sections_path, class: 'btn btn-primary btn-lg' %>
+</div>

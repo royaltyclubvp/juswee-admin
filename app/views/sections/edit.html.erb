@@ -1,0 +1,26 @@
+<%
+   @pagetitle = 'Edit Section'
+   @page_class = 'sections edit'
+%>
+
+<h1 class='text-center'>Edit Section: <%= @section.section_name %></h1>
+
+<%= render partial: 'layouts/messages' %>
+
+<div class='well well-lg'>
+  <%= form_for @section do |f| %>
+      <div class='form-group'>
+        <%= f.label :section_name %>
+        <%= f.text_field :section_name, required: true, class: 'form-control' %>
+      </div>
+
+      <%= attachment_image_tag @section, :image, :fit, 250, nil %>
+
+      <div class='form-group'>
+        <%= f.label :image, 'Section Image' %>
+        <%= f.attachment_field :image, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>
